@@ -3,8 +3,8 @@
 
 #include <stdio.h>
 
-void fibonacci_func(int fibonacci_limit);
-int factorial_func(int factorial_input);
-int prime_func(int prime_input);
+double perimeter_of_triangle_func(double, double, double);
+double area_of_triangle_func(double, double, double);
+int TypeOfTriangle_func(double, double, double);
 
 #endif
