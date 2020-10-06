@@ -6,8 +6,9 @@
 #define PROJECT_NAME "Function"
 
 /* Prototypes for all the test functions */
-void test_factorial(int);
-void test_prime(int);
+void test_perimeter(double, double, double);
+void test_area(double, double, double);
+void test_Type(double, double, double);
 
 
 /* Start of the application test */
@@ -20,8 +21,9 @@ int main() {
 /* Note: Do not edit END */
 
 /* Add your test functions in this format for testing*/
-  CU_add_test(suite, "factorial_func", test_factorial);
-  CU_add_test(suite, "prime_func", test_prme);
+  CU_add_test(suite, "perimeter_of_triangle", test_perimeter);
+  CU_add_test(suite, "area_of_triangle", test_area);
+   CU_add_test(suite, "TypeOfTriangle", test_Type);
 
 
 /* Note: Do not edit START*/
@@ -37,23 +39,32 @@ int main() {
   return 0;
 }
 /* Write all the test functions */
-void test_factorial(int) {
-  CU_ASSERT(3628800 == factorial_func(10));
-  CU_ASSERT(40320 == factorial_func(8));
-  CU_ASSERT(6 == factorial_func(3));
-  CU_ASSERT(5040 == factorial_func(7));
-  CU_ASSERT(720 == factorial_func(6));
+void test_perimeter(double,double,double) {
+  CU_ASSERT( 12 == perimeter_of_triangle(3,4,5));
+  CU_ASSERT(9 == perimeter_of_triangle(3,3,3));
+  CU_ASSERT(6 == perimeter_of_triangle(2,2,2));
+  CU_ASSERT(30 == perimeter_of_triangle(5,12,13));
+  CU_ASSERT(56 == perimeter_of_triangle(7,24,25));
 
   /* Dummy fail*/
-  CU_ASSERT(100 == factorial_func(5));
+  CU_ASSERT(10 == perimeter_of_triangle(3,4,5));
 }
 
-void test_prime(int) {
-  CU_ASSERT(1 == prime_func(7));
-  CU_ASSERT(0 == prime_func(52));
-  CU_ASSERT(1 == prime_func(3));
-  CU_ASSERT(0 == prime_func(12));
+void test_area(double,double,double) {
+  CU_ASSERT(6.00 == area_of_triangle(3,4,5));
+  CU_ASSERT(3.90 == area_of_triangle(3,3,3));
+  CU_ASSERT(30.00 == area_of_triangle(5,12,13));
+  CU_ASSERT(84.00 == area_of_triangle(7,24,25));
 
   /* Dummy fail*/
-  CU_ASSERT(0 == prime_func(6));
+  CU_ASSERT(8.00 == area_of_triangle(3,4,5));
+}
+void test_Type(double,double,double) {
+  CU_ASSERT(3 == TypeOfTriangle(3,4,5));
+  CU_ASSERT(1 == TypeOfTriangle(3,3,3));
+  CU_ASSERT(3 == TypeOfTriangle(5,12,13));
+  CU_ASSERT(3 == TypeOfTriangle(7,24,25));
+
+  /* Dummy fail*/
+  CU_ASSERT(8 == TypeOfTriangle(3,4,5));
 }
